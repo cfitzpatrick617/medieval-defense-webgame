@@ -61,8 +61,6 @@ If the startwave button is clicked twice before it is deleted enemies will spawn
 <li>Arrow Image: https://www.vectorstock.com/royalty-free-vector/arch-bow-arrow-vector-16439588</li>
 </ul>
 
-A special thank you to the amazing Jess Dunbar for designing the awesome enemy sprites and frozen enemy sprites.
-
 <h3>Audio</h3>
 <ul>
 <li>Player Damage Sound Effect: https://pixabay.com/users/universfield-28281460</li>
@@ -73,6 +71,13 @@ A special thank you to the amazing Jess Dunbar for designing the awesome enemy s
 
 <h3>Font</h3>
 https://www.1001fonts.com/ringbearer-font.html
+
+<h2>Credits</h2>
+<ul>
+<li><b>Calum Fitzpatrick</b> - Developer, Audio Engineer and Software Tester</li>
+<li><b>Cain Mitchell</b> - Designer and Developer</li>
+<li><b>Jess Dunbar</b> - Artist (Enemy Sprites and Frozen Sprites)</li>
+</ul>
 
 
 

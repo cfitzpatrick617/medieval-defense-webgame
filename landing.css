@@ -1,0 +1,380 @@
+@font-face { font-family: RINGM; src: url('RINGM___.TTF'); }
+
+body {
+    font-size: 120%;
+    background-color: #1a2020;
+    color: #fafafa;
+    font-family: 'RINGM', Fallback, sans-serif;
+    margin: 10%;
+    background-image: url('res/images/background2.jpg');
+}
+
+.blue-bordered{
+    color: blue;
+    border: thin solid blue;
+}
+
+button{
+    background-color: darkgrey;
+    font-family: 'RINGM', Fallback, sans-serif;
+    height: fit-content;
+    font-size: 120%;
+}
+
+.mainBody {
+    background-color: #1a2020;
+    padding: 5%;
+
+}
+
+.mainBodyHeader {
+    font-weight: bold;
+    text-decoration: underline;
+    font-size: 160%;
+    display: flex;
+    flex: 50%;
+    padding-left: 15px;
+}
+
+
+.mainBodyTextFlex {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#mygamearea {
+    position: relative;
+    height: 85vh;
+    height: 85vh;
+    max-width: 70vw;
+    background-color: white;
+    overflow: hidden;
+}
+
+.screen{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+}
+
+#startScreen{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+}
+
+#world{
+    z-index: 0;
+    cursor: url("res/images/crosshair.png") 35 35, auto;
+}
+
+#upgrade{
+    z-index: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+#leaderboard {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    transition: background-color 3s ease; 
+}
+
+#gameSummary{
+    z-index: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#summaryStats{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.upgrade-menu{
+    width: 50%;
+    height: 60%;
+    margin-right: 30px;
+}
+
+#upgradeOptions{
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.upgrade-option{
+    width: 25%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    border-radius: 5px;
+    margin: 5px;
+}
+
+.upgrade-option *{
+    /* Set it so that child elements do not activate on click events */
+    pointer-events: none; 
+}
+
+.selected{
+    background-color: rgba(128, 128, 128, 0.411);
+}
+
+.upgrade-option:hover{
+    transform: translateY(-5px)
+}
+
+.upgrade-option img{
+    width: 80%;
+    align-self: center;
+}
+
+#waveAlert{
+    position: absolute;
+    display: flex;
+    align-items: center;
+    right: 30px;
+    bottom: 10px;
+}
+
+.button-disabled{
+    color: black;
+    border: thin solid black;
+    background-color: grey;
+    pointer-events: none;
+}
+
+#startWave{
+    margin-left: 15px;
+}
+
+#freezeButton{
+    margin-right: 15px;
+}
+
+button:hover{
+    transform: scale(1.02);
+}
+
+.level{
+    width: 100%;
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+}
+
+.sky{
+    height: 45%;
+    background-image: url("res/images/sky.png");
+    background-size: cover;
+    flex-direction: column;
+}
+
+.wall{
+    height: 45%;
+    background-image: url("res/images/wall.png");
+    background-size: cover;
+}
+
+.ground{
+    height: 10%;
+    background-image: url("res/images/ground.png");
+    background-size: cover;
+}
+
+#freezeInterface{
+    display: none;
+    position: absolute;
+    bottom: 8px;
+    right: 16px;
+}
+
+#box{
+    position: absolute;
+    top: 70vh;
+    width: 70vw;
+    text-align: center;
+    font-size: 18px;
+    /* border: thin solid black; */
+    color: black;
+    z-index: -1;
+}
+
+.placeholderGameImage {
+    max-height: 70vh;
+    max-width: 100vw;
+    object-fit: cover; 
+    border: thin solid black;
+}
+
+.blur {
+    filter: blur(4px);
+}
+
+.spawn{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: flex-end;
+}   
+
+.enemy{
+    position: absolute;
+    width: 110px;
+    display: flex;
+    font-size: xx-large;
+    background-size: cover;
+}
+
+.serf{
+    background-image: url("res/images/serf.png");
+    height: 150px;
+    --damage: 1; /* deals one hitpoint */
+    --health: 1;
+    --score: 5;
+    --speed: 7000;
+    --normalSprite: "res/images/serf.png";
+    --frozenSprite: "res/images/frozen-serf.png";
+}
+
+.chainmail{
+    background-image: url("res/images/chainmail.png");
+    height: 180px;
+    --damage: 2; /* deals two hitpoints */
+    --health: 2;
+    --score: 10;
+    --speed: 8000;
+    --normalSprite: "res/images/chainmail.png";
+    --frozenSprite: "res/images/frozen-chainmail.png";
+}
+
+.knight{
+    background-image: url("res/images/knight.png");
+    height: 170px;
+    align-items: center;
+    --damage: 3; /* deals three hitpoints */
+    --health: 3;
+    --score: 15;
+    --speed: 9000;
+    --normalSprite: "res/images/knight.png";
+    --frozenSprite: "res/images/frozen-knight.png";
+}
+
+.all-stats{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    display: flex;
+    width: 100%;
+}
+
+.player-stats{
+    width: fit-content;
+    display: flex;
+    flex-direction: column;
+    margin-left: auto;
+    align-self: flex-start;
+    margin-top: 10px;
+    margin-right: 10px;
+}
+
+.player-stats *{
+    margin-left: auto;
+}
+
+.game-stats{
+    width: fit-content;
+    display: flex;
+    flex-direction: column;
+    margin-left: 10px;
+    align-self: flex-start;
+    margin-top: 10px;
+}
+
+.player-stats p, .game-stats p{
+    padding: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.wave-stats{
+    width: 50%;
+    height: 60%;
+    margin-left: 30px;
+}
+
+.healthbar{
+    width: fit-content;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.healthbar *{
+    width: 32px;
+    height: 32px;
+}
+
+#reloadButton {
+    display: none;
+    color: red;
+    border: thin solid red;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    font-size: 25px;
+}
+
+#ammo {
+    position: absolute;
+    bottom: 4px;
+    left: 16px;
+}
+
+.gameOverDes {
+    color: red;
+    font-size: 24px;
+    top: -1px; /* Used to spawn off the page*/
+    left: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translateX(-50%);
+    transition: top 5s ease;
+    position: absolute;
+    visibility: hidden; /* It starts hidden */
+
+}
+
+.leaderboard {
+    font-size: 22px;
+    color: white;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+.userEntry {
+    color: white;
+    font-size: 15px;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing Page</title>
+    <link rel="stylesheet" href="landing.css">
+</head>
+
+<body>
+    <div class="mainBody">
+        <header>
+            <div class="mainBodyHeader">
+                Medival Castle Defence!
+            </div>
+        </header>
+
+        <div class="mainBodyTextFlex">
+            Welcome to our game, within this game there are 5 rounds the objective is to survive until the
+            end of the round. At the end of each round you will be given 15 seconds to upgrade, these can affect
+            the outcome of the game so be mindful of what you choose.
+        </div>
+
+        <!-- Game area consists of a stack of pages which are swapped as needed -->
+        <div id="mygamearea">
+            <div id="startScreen" class="screen">
+                <button id="startGameButton">Start Game</button>
+            </div>
+            <div id="world" class="screen">
+                <div id="upper" class="sky level">
+                    <div id="upperSpawn" class="spawn"></div>
+                    <div class="all-stats">
+                        <div class="game-stats">
+                            <p>Wave <span id="waveNum">1</span></p>
+                            <p>Timer: <span id="timer"></span></p>
+                        </div>
+                        <div class="player-stats">
+                            <div id="healthbar" class="healthbar"><img src="res/images/full-heart.png" alt="hp">
+                                <img src="res/images/full-heart.png" alt="hp">
+                                <img src="res/images/full-heart.png" alt="hp">
+                                <img src="res/images/full-heart.png" alt="hp">
+                                <img src="res/images/full-heart.png" alt="hp">
+                                <img src="res/images/full-heart.png" alt="hp">
+                                <img src="res/images/full-heart.png" alt="hp">
+                                <img src="res/images/full-heart.png" alt="hp">
+                                <img src="res/images/full-heart.png" alt="hp">
+                            </div>
+                            <p>Score: <span id="scoreboard">0</span></p>
+                        </div>
+                    </div>
+                </div>
+                <div id="lower" class="wall level">
+                    <div id="lowerSpawn" class="spawn"></div>
+                </div>
+                <div class="ground level"></div>
+                <div id="freezeInterface">
+                    <button id="freezeButton" class="blue-bordered">Freeze now!</button>
+                </div>
+                <div id="ammo"></div>
+                <button id="reloadButton">Reload!</button>
+            </div>
+            <div id="upgrade" class="screen">
+                <div class="wave-stats">
+                    <h1>Wave Complete</h1>
+                    <ul>
+                        <li>Score: <span id="waveScore"></span></li>
+                        <li>Enemies killed: <span id="waveEnemies"></span></li>
+                        <li>Shots hit: <span id="waveShotsHit"></span></li>
+                        <li>Shots fired: <span id="waveShotsFired"></span></li>
+                        <li>Accuracy: <span id="waveAccuracy"></span></li>
+                    </ul>
+                </div>
+                <div class="upgrade-menu">
+                    <h2>Choose an upgrade</h2>
+                    <div id="upgradeOptions">
+                        <div class="upgrade-option" id="addHeart">
+                            <img src="res/images/add-heart-option.png" alt="Add Heart">
+                            <p>Add an extra heart</p>
+                        </div>
+                        <div class="upgrade-option" id="addAmmo">
+                            <img src="res/images/ammoImg.png" alt="Add Ammo">
+                            <p>Increase Ammo</p>
+                        </div>
+                        <div class="upgrade-option" id="upgradeReload">
+                            <img src="res/images/timer.png" alt="Shorten Timer">
+                            <p>Shorten Reload Time</p>
+                        </div>
+                        <div class="upgrade-option" id="enableFreeze">
+                            <img src="res/images/freeze-option.png" alt="Ice Cube">
+                            <p>Temporarily freeze enemies</p>
+                        </div>
+                    </div>
+                </div>
+                <div id="waveAlert">
+                    <p>Next wave in <span id="nextWaveTimer"></span>...</p>
+                    <button id="startWave">Start now</button>
+                </div>
+            </div>
+            <div id="gameSummary" class="screen">
+                <div id="summaryStats">
+                    <h1 id="gameVerdict"></h1>
+                    <ul>
+                        <li>Waves survived: <span id="gameWaves"></span></li>
+                        <li>Score: <span id="gameScore"></span></li>
+                        <li>Enemies killed: <span id="gameEnemies"></span></li>
+                        <li>Shots hit: <span id="gameShotsHit"></span></li>
+                        <li>Shots fired: <span id="gameShotsFired"></span></li>
+                        <li>Accuracy: <span id="gameAccuracy"></span></li>
+                    </ul>
+                </div>
+                <button id="showLeaderboardButton">Show Leaderboard</button>
+            </div>
+            <div id="leaderboard" class ="screen">
+            </div>
+        </div>
+    </div>
+    <footer>
+        <p>Project work by Cain Mitchell and Calum Fitzpatrick</p>
+    </footer>
+</body>
+<script src="engine.js"></script>
+
+</html>
